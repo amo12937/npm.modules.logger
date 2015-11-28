@@ -39,11 +39,10 @@ describe "Logger", ->
           it "should call reporter's [#{f}] function", ->
             l = "hoge"
             type = "[#{f.toUpperCase()}]"
-            d = (new Date now).toUTCString()
-            t = ".#{now % 1000}"
+            d = (new Date now).toJSON()
 
             logger[f] l
-            expect(reporter[f]).to.have.been.calledWith type, d, t, l
+            expect(reporter[f]).to.have.been.calledWith type, d, "::", l
             expect(reporter[f]).to.have.callCount 1
 
     for func in ["assert", "clear", "dir", "dirxml", "table", "trace", "count"]

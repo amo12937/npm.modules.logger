@@ -9,12 +9,11 @@ Logger.defaultLogger = Logger.create()
 Logger.logDecolator = (func) ->
   type = "[#{func.toUpperCase()}]"
   return ->
-    ts = Date.now()
-    dt = new Date ts
+    dt = new Date Date.now()
     @_reporter[func]?(
       type
-      dt.toUTCString()
-      ".#{ts % 1000}"
+      dt.toJSON()
+      "::"
       arguments...
     )
 
