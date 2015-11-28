@@ -1,0 +1,19 @@
+{
+  "name": "amo.modules.logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amo12937/npm.modules.logger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amo12937/npm.modules.logger/issues"
+  },
+  "homepage": "https://github.com/amo12937/npm.modules.logger#readme"
+}
