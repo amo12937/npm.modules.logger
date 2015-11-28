@@ -11,16 +11,17 @@ Logger.logDecolator = (func) ->
   return ->
     ts = Date.now()
     dt = new Date ts
-    @_reporter[func]?
+    @_reporter[func]?(
       type
       dt.toUTCString()
       ".#{ts % 1000}"
       arguments...
+    )
 
 for func in ["log", "debug", "info", "warn", "error"]
   Logger.prototype[func] = Logger.logDecolator func
 
-Logger.simpleDecolator = (func) ->
+Logger.simpleDecolator = (func) -> ->
   @_reporter[func]? arguments...
 
 for func in ["assert", "clear", "dir", "dirxml", "table", "trace", "count"]
